@@ -1,6 +1,11 @@
 # demo/run_demo.py
 import time
 import random
+import os
+
+if os.getenv("CI") == "true":
+    print("Skipping real demo in CI environment.")
+    exit(0)
 
 def fake_inference():
     gestures = ["thumbs_up", "thumbs_down", "swipe_left", "swipe_right", "fist"]
