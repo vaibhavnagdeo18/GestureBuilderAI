@@ -1,0 +1,13 @@
+# Contributing
+
+Thanks for checking out GestureBuilderAI!
+
+Quick ways to help:
+- Improve documentation or README
+- Add gesture examples in `demo/assets/`
+- Add tests for inference functions
+
+Workflow:
+1. Fork the repo
+2. Create a branch: `yourname/short-desc`
+3. Open a PR with a clear description and tests if applicable

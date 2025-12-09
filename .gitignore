@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+venv310/
+.Python
+
+# Virtualenv
+venv/
+venv310/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models & large files
+*.h5
+*.pt
+*.ckpt
+*.tflite
+/model/
+models/
+
+# Logs
+*.log.env
