@@ -1,4 +1,5 @@
 # GestureBuilderAI — Real-time Gesture Builder & Inference (Showcase)
+![CI Status](https://github.com/vaibhavnagdeo18/GestureBuilderAI/actions/workflows/demo-run.yml/badge.svg)
 
 A real-time gesture creation and inference system built using Python + MediaPipe + lightweight ML models.  
 Designed for prototyping gesture-based interaction systems, dataset collection, training, and live inference.
