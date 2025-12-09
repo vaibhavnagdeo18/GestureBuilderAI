@@ -1,0 +1,38 @@
+name: Demo run
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Create venv and install dependencies
+        run: |
+          python -m venv venv
+          . venv/bin/activate
+          python -m pip install --upgrade pip setuptools wheel
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+          - name: (Optional) Export OPENAI_API_KEY for demo if available
+          if: ${{ secrets.OPENAI_API_KEY != '' }}
+          run: |
+            echo "OPENAI_API_KEY is set in GitHub Secrets"
+          env:
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Run demo
+        run: |
+          . venv/bin/activate
+          python demo/run_demo.py --n 2 --d 0.1
